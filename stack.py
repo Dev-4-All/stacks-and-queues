@@ -16,12 +16,8 @@ class Stack:
 
     def push(self, value: int) -> None:
         new_node = Node(value)
-
-        if self.__top is None:
-            self.__top = new_node
-        else:
-            new_node.next = self.__top
-            self.__top = new_node
+        new_node.next = self.__top
+        self.__top = new_node
 
         self.__height += 1
 
