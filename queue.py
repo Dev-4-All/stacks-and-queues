@@ -20,12 +20,11 @@ class Queue:
 
         if self.__first is None:
             self.__first = new_node
-            self.__last = new_node
         else:
             assert self.__last is not None, "Queue corruption detected: first is set but last is None"
-
             self.__last.next = new_node
-            self.__last = new_node
+            
+        self.__last = new_node
 
         self.__length += 1
 
